@@ -31,18 +31,34 @@ function drawMatrix() {
 setInterval(drawMatrix, 50);
 
 document.addEventListener("DOMContentLoaded", function() {
-    const text = "Hi, I'm Sujan S";
+    const text = "Hi, I'm Sujan S\nWelcome to My Portfolio !!";
     const typingTextElement = document.getElementById("typing-text");
     
     let index = 0;
 
     function type() {
         if (index < text.length) {
-            typingTextElement.textContent += text.charAt(index);
+            if (text.charAt(index) === '\n') {
+                typingTextElement.innerHTML += '<br>';
+            } else {
+                typingTextElement.innerHTML += text.charAt(index);
+            }
             index++;
-            setTimeout(type, 100); // Adjust speed here
+            setTimeout(type, 50);
+        } else {
+            // Text is fully typed, stop the cursor animation
+            typingTextElement.style.borderRight = 'none';
+            typingTextElement.style.textAlign = 'center';
         }
     }
 
     type();
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const emailLink = document.getElementById('emailLink');
+    emailLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = 'mailto:sujan5149481@gmail.com?subject=Contact from Portfolio&body=Hello Sujan,';
+    });
 });

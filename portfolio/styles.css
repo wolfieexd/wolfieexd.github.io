@@ -87,32 +87,33 @@ body {
 }
 
 #typing-text {
-    border-right: 2px solid black; /* Cursor effect */
-    white-space: nowrap; /* Prevents text wrapping */
-    overflow: hidden; /* Hides text that is not yet displayed */
-    width: 30ch; /* Set a fixed width based on the character count */
+    border-right: 2px solid white;
+    white-space: pre-line;
+    overflow: hidden;
+    width: 30ch;
     animation: 
         typing 4s steps(30, end) forwards,
-        blink-caret 0.75s step-end infinite,
-        center-text 0s 4s forwards; /* New animation */
+        blink-caret 0.75s step-end infinite;
     margin: 0 auto;
-    text-align: left; /* Start with left alignment */
+    text-align: left;
+    font-size: 2em;
+    line-height: 1.5;
 }
 
 @keyframes typing {
     from { width: 0; }
-    to { width: 30ch; }
+    to { width: 100%; }
 }
 
 @keyframes blink-caret {
     from, to { border-color: transparent; }
-    50% { border-color: black; }
+    50% { border-color: white; }
 }
 
 @keyframes center-text {
     to {
         text-align: center;
-        border-right: none; /* Remove cursor after animation */
+        border-right: none;
     }
 }
 
