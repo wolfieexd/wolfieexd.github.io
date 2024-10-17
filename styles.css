@@ -172,8 +172,8 @@ body {
 }
 
 .social-icons img {
-    width: 30px; /* Adjust size as needed */
-    height: 30px;
+    width: 40px; /* Adjust size as needed */
+    height: 40px;
     transition: transform 0.3s ease;
 }
 
