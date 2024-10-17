@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier Prime', sans-serif;  /* Apply the new font */
+    color: #fff;
+    background-color: black;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-weight: 700;  /* Make headings bold */
+}
+
+p, li, a {
+    font-weight: 400;  /* Normal font weight for text */
+}
+
+html, body {
+    height: 100%;
+}
+
+header, footer, section {
+    position: relative;
+    z-index: 2;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+header {
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    padding: 2rem;
+    text-align: center;
+}
+
+#home {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Add this line */
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#skills, #about, #contact {
+    min-height: 100vh;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Add this to ensure body can scroll even with canvas fixed */
+body {
+    overflow-y: scroll;
+}
+
+#typing-text {
+    border-right: 2px solid black; /* Cursor effect */
+    white-space: nowrap; /* Prevents text wrapping */
+    overflow: hidden; /* Hides text that is not yet displayed */
+    width: 30ch; /* Set a fixed width based on the character count */
+    animation: 
+        typing 4s steps(30, end) forwards,
+        blink-caret 0.75s step-end infinite,
+        center-text 0s 4s forwards; /* New animation */
+    margin: 0 auto;
+    text-align: left; /* Start with left alignment */
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 30ch; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: black; }
+}
+
+@keyframes center-text {
+    to {
+        text-align: center;
+        border-right: none; /* Remove cursor after animation */
+    }
+}
+
+#skills {
+    text-align: center;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0; /* Add some vertical padding to the container */
+}
+
+.skills-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px; /* Increased space between rows */
+    width: 100%;
+}
+
+.skill-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 30px 30px; /* Increased horizontal and bottom margin */
+    width: 150px; /* Slightly increased width */
+}
+
+.skill-block img {
+    width: 80px; /* Increased icon size */
+    height: 80px;
+    margin-bottom: 15px; /* Increased space between icon and text */
+}
+
+.skill-block h4 {
+    text-align: center;
+    margin: 0;
+    font-size: 1.1em; /* Slightly larger font size for skill names */
+}
+
+.skill-block:hover {
+    transform: translateY(-10px);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between icons */
+}
+
+.social-icons a {
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 30px; /* Adjust size as needed */
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1); /* Slight enlargement on hover */
+}
